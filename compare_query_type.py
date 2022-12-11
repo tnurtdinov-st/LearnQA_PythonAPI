@@ -24,13 +24,18 @@ for i in params:
     if "GET" not in i:
         if "success" in response.text:
             print("warning!!! incorrect response for GET and " + i)
-
+    else:
+        if "success" not in response.text:
+            print("warning!!! incorrect response for GET and " + i)
 
 for i in params:
     response = requests.post("https://playground.learnqa.ru/ajax/api/compare_query_type", data={"method": i})
     print("4 POST - " + i+ ": " + response.text)
     if "POST" not in i:
         if "success" in response.text:
+            print("warning!!! incorrect response for POST and " + i)
+    else:
+        if "success" not in response.text:
             print("warning!!! incorrect response for POST and " + i)
 
 for i in params:
@@ -39,10 +44,16 @@ for i in params:
     if "PUT" not in i:
         if "success" in response.text:
             print("warning!!! incorrect response for PUT and " + i)
+    else:
+        if "success" not in response.text:
+            print("warning!!! incorrect response for PUT and " + i)
 
 for i in params:
     response = requests.delete("https://playground.learnqa.ru/ajax/api/compare_query_type", data={"method": i})
     print("4 DELETE - " + i+ ": " + response.text)
     if "DELETE" not in i:
         if "success" in response.text:
+            print("warning!!! incorrect response for DELETE and " + i)
+    else:
+        if "success" not in response.text:
             print("warning!!! incorrect response for DELETE and " + i)
