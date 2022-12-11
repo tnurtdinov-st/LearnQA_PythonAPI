@@ -8,7 +8,6 @@ for i in passwords:
     cookies = {}
     if cookie_value is not None:
         cookies.update({'auth_cookie': cookie_value})
-        print()
         response2 = requests.post("https://playground.learnqa.ru/ajax/api/check_auth_cookie", cookies=cookies)
         if "NOT" in response2.text:
             pass
