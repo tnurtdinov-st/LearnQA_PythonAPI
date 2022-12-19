@@ -19,5 +19,5 @@ class TestUserAgent:
         response = requests.get("https://playground.learnqa.ru/ajax/api/user_agent_check", headers={"User-Agent": user_agent}, verify = False)
         print(response.text)
         assert values["platform"] in response.text, f"Platform name {values['platform']} not equal to response {print(response.json()['platform'])}"
-        assert values["browser"] in response.text, f"Platform name {values['browser']} not equal to response {print(response.json()['browser'])}"
-        assert values["device"] in response.text, f"Platform name {values['device']} not equal to response {print(response.json()['device'])}"
+        assert values["browser"] in response.text, f"Browser name {values['browser']} not equal to response {print(response.json()['browser'])}"
+        assert values["device"] in response.text, f"Device name {values['device']} not equal to response {print(response.json()['device'])}"
