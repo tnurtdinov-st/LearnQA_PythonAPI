@@ -5,10 +5,9 @@ from lib.assertions import Assertions
 from datetime import datetime
 
 
-@allure.epic("Edition Tests")
-@allure.feature("Edition")
+@allure.epic("Tests for edit feature")
 class TestUserEdit(BaseCase):
-    @allure.title("Successful edit just created user")
+    @allure.title("Successful edit for just created user")
     def test_edit_just_created_user(self):
         #Registration
         register_data = self.prepare_registration_data()
